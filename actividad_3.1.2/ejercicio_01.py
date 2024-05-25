@@ -1,12 +1,12 @@
 names_list = []
-largerst = ''
+larger = ''
 
-for name in range(3):
+for i in range(3):
     name = input('Ingresa un nombre: ')
     names_list.append(name)
 
-for larger in range(len(names_list)):
-    if len(names_list[larger]) > len(largerst):
-        largerst = names_list[larger]
-
-print(largerst)
+for e in range(3):
+    if len(names_list[e]) > len(larger):
+        larger = names_list[e]
+    
+print(larger)
