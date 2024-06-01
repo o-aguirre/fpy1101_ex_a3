@@ -1,4 +1,7 @@
-users = {}
+users = {
+    'ramon':'donramon',
+    'luis':'luchito'
+}
 option = 0
 
 def menu():
@@ -6,10 +9,10 @@ def menu():
     print('2. Registrar usuario')
     print('3. Eliminar usuario')
     print('4. Salir')
-    option = int(input())
-    return option
-
+    
 while True:
+    menu()
+    option = int(input())
     if option == 1:
         user = input('Ingrese usuario: ')
         password = input('Ingrese contraseña: ')
@@ -24,6 +27,12 @@ while True:
     if option == 2:
         users.update({input('Ingresa un usuario: '): input('Ingresa una contraseña: ')})
 
-    option = int(input('Ingrese un opción'))
+    if option == 3:
+        user = input('Ingresa usuario a eliminar: ')
+        if user in users:
+            users.pop(user)
+        else:
+            print('Usuario no encontrado')
 
-print(users)
+    if option == 4:
+        break
