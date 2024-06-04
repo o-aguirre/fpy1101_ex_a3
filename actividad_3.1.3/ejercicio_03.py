@@ -10,3 +10,9 @@ for x in range(10):
 
 for e in range(len(bus)):
     print(bus[e])
+
+reserva = int(input('Escoja un asiento: '))
+for e in bus:
+    for j in e:
+        if reserva == j:
+            e[j] == 'x'
