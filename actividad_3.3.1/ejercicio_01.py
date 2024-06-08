@@ -17,5 +17,5 @@ for i in range(cantidad_usuario):
 
 #Buscar nombre mas corto
 shorter = ''
-for i in range(len(lista_personas)):
-    print(lista_personas[i][0])
+for lista in lista_personas:
+    print(lista['nombre'])
