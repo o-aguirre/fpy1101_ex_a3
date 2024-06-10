@@ -18,4 +18,8 @@ for i in range(cantidad_usuario):
 #Buscar nombre mas corto
 shorter = ''
 for lista in lista_personas:
-    print(lista['nombre'])
+    if shorter:
+        if len(lista['nombre']) < len(shorter):
+            shorter = lista['nombre']
+    else: shorter = lista['nombre']
+print(shorter)

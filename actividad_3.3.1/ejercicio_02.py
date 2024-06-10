@@ -5,13 +5,16 @@ guia_telefono = {}
 
 for i in range(2):
     nombre = input('Ingrese un nombre: ')
-    telefono = dict(telefono = input('Ingrese telefono: '))
-    email = dict(email = input('Ingrese email: '))
-    direccion = dict(direccion =  input('Ingrese direccion: '))
-    estado = dict(estado =  bool(input('Ingrese estado: ')))
-    guia_telefono[nombre] = telefono
-    guia_telefono[nombre] = email
-    guia_telefono[nombre] = direccion
-    guia_telefono[nombre] = estado
+    telefono = input('Ingrese telefono: ')
+    email = input('Ingrese email: ')
+    direccion = input('Ingrese direccion: ')
+    estado = bool(input('Ingrese estado: '))
+    guia_telefono[nombre] = {
+        "telefono" : telefono,
+        'email' : email,
+        'direccion' : direccion,
+        'estado' : estado,
+    }
+    
 
 print(guia_telefono)
