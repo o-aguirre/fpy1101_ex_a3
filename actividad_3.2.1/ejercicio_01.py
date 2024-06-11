@@ -1,15 +1,38 @@
-import random
+tupla_nombres = ()
 
-matriz_3D = []
+while True:
+    name = input('Ingrese un nombre: ')
+    tupla_nombres = set(tupla_nombres)
+    tupla_nombres.add(name)
+    if len(tupla_nombres) == 3:
+        break
+    
 
-for x in range(3):
-    lista_ = []
-    matriz_3D.append(lista_)
-    for y in range(4):
-        lista = []
-        lista_.append(lista)
-        for e in range(4):
-            elemento = random.randint(1, 3)
-            lista.append(elemento)
+tupla_nombres = tuple(tupla_nombres)
+shorter = ''
 
-print(matriz_3D)
+for i in tupla_nombres:
+    if shorter:
+        if len(i) < len(shorter):
+            shorter = i
+    else:
+        shorter = i
+
+print(tupla_nombres)
+print(shorter)
+
+
+
+#Otra manera
+#tupla_nombres = ()
+
+#while True:
+    #name = input('Ingrese un nombre: ')
+    #tupla_nombres += (name, )
+    #tupla_nombres = set(tupla_nombres)
+    #if len(tupla_nombres) == 3:
+        #break
+    #else:
+        #tupla_nombres = tuple(tupla_nombres)
+    
+#print(tupla_nombres)
