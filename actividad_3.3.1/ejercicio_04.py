@@ -1,0 +1,1 @@
+#descaragar informacion de: nombre, asignatura, promedio, asistencia, estado
