@@ -1,1 +1,1 @@
-#descaragar informacion de: nombre, asignatura, promedio, asistencia, estado
+#descargar informacion de: nombre, asignatura, promedio, asistencia, estado
