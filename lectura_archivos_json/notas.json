@@ -1,0 +1,29 @@
+{
+    "alumnos": [
+      {
+        "nombre": "Juan Pérez",
+        "notas": {
+          "Matemáticas": 7.5,
+          "Lengua": 6.8,
+          "Ciencias": 8.2
+        }
+      },
+      {
+        "nombre": "Ana López",
+        "notas": {
+          "Matemáticas": 9.1,
+          "Lengua": 8.7,
+          "Ciencias": 7.9
+        }
+      },
+      {
+        "nombre": "Carlos García",
+        "notas": {
+          "Matemáticas": 6.2,
+          "Lengua": 5.5,
+          "Ciencias": 7.1
+        }
+      }
+    ]
+  }
+  
