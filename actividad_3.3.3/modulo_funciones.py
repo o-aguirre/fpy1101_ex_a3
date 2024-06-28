@@ -42,12 +42,25 @@ def mejores_por_anio(datos, anio):
             alumno_mejor_promedio['curso'] = i[2]
             alumno_mejor_promedio['promedio'] = i[3]
     print(alumno_mejor_promedio)
-    
-def mejor_asistencia(datos, anio, asignatura):
-    asignatura = []
+
+def promedio_mejor_asistencia(datos):
+    mejor_asistencia = []
+    promedio_asistencia = 0
     for i in datos:
-        if i['curso'] == anio:
-            print(i)
+        if i['curso'] == 'primer anio':
+            if promedio('Introduccion al Cloud Computing', datos) > mejor_asistencia: 
+                mejor_asistencia = promedio('Introduccion al Cloud Computing', datos)
+            elif promedio('Fundamentos de Programacion', datos):
+                mejor_asistencia = promedio('Fundamentos de Programacion', datos)
+
+def promedio(asignatura, datos):
+    total_promedio = 0
+    contador = 0
+    for i in datos:
+        if i['asignatura'] == asignatura:
+            total_promedio += int(i['asistencia'])
+            contador += 1
+    return total_promedio / contador
 
 #Funcion imprime resultados
 def imprimir(datos, opcion):
@@ -78,9 +91,5 @@ def imprimir(datos, opcion):
         mejores_por_anio(datos, 'quinto anio')
         mejores_por_anio(datos, 'sexto anio')
     if opcion == 3:
-        mejor_asistencia(datos, 'primer anio')
-        mejor_asistencia(datos, 'segundo anio')
-        mejor_asistencia(datos, 'tercer anio')
-        mejor_asistencia(datos, 'cuarto anio')
-        mejor_asistencia(datos, 'quinto anio')
-        mejor_asistencia(datos, 'sexto anio')
+        mejor_asistencia_anio(datos)
+        

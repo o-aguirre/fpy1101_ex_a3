@@ -38,4 +38,3 @@ while True:
     else:
         f.imprimir(diccionario_datos, opt)
 
-
