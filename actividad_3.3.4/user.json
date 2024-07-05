@@ -1,0 +1,62 @@
+[
+    {
+        "nombre": "franco",
+        "rut": "12.123.123-3",
+        "direccion": "valpo",
+        "servicios": {
+            "agua": "esval",
+            "gas": "gasco",
+            "electricidad": "chilquinta",
+            "internet": "vtr",
+            "telefono": "wom"
+        }
+    },
+    {
+        "nombre": "eduardo",
+        "rut": "17.123.123-k",
+        "direccion": "vi\u00f1a",
+        "servicios": {
+            "agua": "aguas andinas",
+            "gas": "lipigas",
+            "electricidad": "cge",
+            "internet": "movistar",
+            "telefono": "claro"
+        }
+    },
+    {
+        "nombre": "maria",
+        "rut": "11.111.111-1",
+        "direccion": "quilpue",
+        "servicios": {
+            "agua": "esval",
+            "gas": "abastible",
+            "electricidad": "colbun",
+            "internet": "entel",
+            "telefono": "entel"
+        }
+    },
+    {
+        "nombre": "ronald",
+        "rut": "22.222.222-2",
+        "direccion": "villa alemana",
+        "servicios": {
+            "agua": "esval",
+            "gas": "gasco",
+            "electricidad": "chilquinta",
+            "internet": "vtr",
+            "telefono": "claro"
+        }
+    },
+    {
+        "nombre": "andrea",
+        "rut": "33.333.333-3",
+        "direccion": "pe\u00f1a blanca",
+        "servicios": {
+            "agua": "esval",
+            "gas": "abastible",
+            "electricidad": "chilquinta",
+            "internet": "movistar",
+            "telefono": "movistar"
+        }
+    }
+]
