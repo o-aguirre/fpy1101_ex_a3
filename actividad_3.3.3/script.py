@@ -30,9 +30,20 @@ for i in datos:
     }
     diccionario_datos.append(alumno)
 
+print('******************************************************************')
+print('Informacion alumnos')
+print('******************************************************************')
 
 while True:
-    opt = int(input())
+    print('\nEscoge una opcion para desplegar informacion')
+    print('1. Obtener el mejor alumno por asignatura')
+    print('2. Obtener el mejor alumno por año')
+    print('3. Obtener la asignatura de cada año con mejor asistencia')
+    print('4. Salir')
+    try:
+        opt = int(input())
+    except:
+        break
     if opt == 4:
         break
     else:

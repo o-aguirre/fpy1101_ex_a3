@@ -43,24 +43,69 @@ def mejores_por_anio(datos, anio):
             alumno_mejor_promedio['promedio'] = i[3]
     print(alumno_mejor_promedio)
 
-def promedio_mejor_asistencia(datos):
-    mejor_asistencia = []
-    promedio_asistencia = 0
-    for i in datos:
-        if i['curso'] == 'primer anio':
-            if promedio('Introduccion al Cloud Computing', datos) > mejor_asistencia: 
-                mejor_asistencia = promedio('Introduccion al Cloud Computing', datos)
-            elif promedio('Fundamentos de Programacion', datos):
-                mejor_asistencia = promedio('Fundamentos de Programacion', datos)
-
-def promedio(asignatura, datos):
-    total_promedio = 0
-    contador = 0
+#Sacamos un promedio de datos pasados por parámtro
+def promedio_asignatura(datos, asignatura):
+    promedio_asignatura = 0
+    cont = 0
     for i in datos:
         if i['asignatura'] == asignatura:
-            total_promedio += int(i['asistencia'])
-            contador += 1
-    return total_promedio / contador
+            try:
+                promedio_asignatura += int(i['asistencia'])
+                cont += 1
+            except:
+                continue
+    return promedio_asignatura / cont
+
+#Usando funcion para promediar, calculamos promedio de cada asignatura
+def mejor_asistencia(datos):
+    for i in datos:
+        if i['curso'] == 'primer anio':
+            promedio_intro = [promedio_asignatura(datos, 'Introduccion al Cloud Computing'), 'Introduccion al Cloud Computing']
+            promedio_fundamentos = [promedio_asignatura(datos, 'Fundamentos de Programacion'), 'Fundamentos de Programacion']
+            promedio_innovacion = [promedio_asignatura(datos, 'Innovacion'), 'Innovacion']
+        if i['curso'] == 'segundo anio':
+            promedio_inte_plataform = [promedio_asignatura(datos, 'Integraccion de plataformas'), 'Integraccion de plataformas']
+            promedio_cal_integral = [promedio_asignatura(datos, 'calculo integral'), 'calculo integral']
+            promedio_alg_lineal = [promedio_asignatura(datos, 'algebra lineal'), 'algebra lineal']
+        if i['curso'] == 'tercer anio':
+            promedio_estruc_datos = [promedio_asignatura(datos, 'Estructura de datos'), 'Estructura de datos']
+            promedio_automatas = [promedio_asignatura(datos, 'Automatas'), 'Automatas']
+            promedio_prog_web = [promedio_asignatura(datos, 'programacion web'), 'programacion web']
+        if i['curso'] == 'cuarto anio':
+            promedio_simulacion = [promedio_asignatura(datos, 'simulacion'), 'simulacion']
+            promedio_base_datos = [promedio_asignatura(datos, 'Base de datos aplicada'), 'Base de datos aplicada']
+            promedio_redes = [promedio_asignatura(datos, 'Redes y comunicaciones'), 'Redes y comunicaciones']
+        if i['curso'] == 'quinto anio':
+            promedio_electromagnetismo = [promedio_asignatura(datos, 'Electromagnetismo'), 'Electromagnetismo']
+            promedio_int_negocio = [promedio_asignatura(datos, 'Inteligencia de negocio'), 'Inteligencia de negocio']
+            promedio_bigdata = [promedio_asignatura(datos, 'big data'), 'big data']
+            promedio_min_datos = [promedio_asignatura(datos, 'mineria de datos'), 'mineria de datos']
+        if i['curso'] == 'sexto anio':
+            promedio_tesis = [promedio_asignatura(datos, 'tesis'), 'tesis']
+            promedio_practica = [promedio_asignatura(datos, 'practica'), 'practica']
+    #print(promedio_intro, promedio_fundamentos, promedio_innovacion)
+    primer_anio = promedio_mayor(promedio_intro, promedio_fundamentos, promedio_innovacion)
+    segundo_anio = promedio_mayor(promedio_inte_plataform, promedio_cal_integral, promedio_alg_lineal)
+    tercer_anio = promedio_mayor(promedio_estruc_datos, promedio_automatas, promedio_prog_web)
+    cuarto_anio = promedio_mayor(promedio_simulacion, promedio_base_datos, promedio_redes)
+    quinto_anio = promedio_mayor(promedio_electromagnetismo, promedio_int_negocio, promedio_bigdata, promedio_min_datos)
+    sexto_anio = promedio_mayor(promedio_tesis, promedio_practica)
+    print(f'Asignatura con mejor asistencia en primer año: {primer_anio[0][1]} con un promedio de {primer_anio[0][0]}%')
+    print(f'Asignatura con mejor asistencia en segundo año: {segundo_anio[0][1]} con un promedio de {segundo_anio[0][0]}%')
+    print(f'Asignatura con mejor asistencia en tercer año: {tercer_anio[0][1]} con un promedio de {tercer_anio[0][0]}%')
+    print(f'Asignatura con mejor asistencia en cuarto año: {cuarto_anio[0][1]} con un promedio de {cuarto_anio[0][0]}%')
+    print(f'Asignatura con mejor asistencia en quinto año: {quinto_anio[0][1]} con un promedio de {quinto_anio[0][0]}%')
+    print(f'Asignatura con mejor asistencia en sexto año: {sexto_anio[0][1]} con un promedio de {sexto_anio[0][0]}%')
+
+
+
+def promedio_mayor(num1, num2, num3=[0], num4=[0]):
+    mayor = []
+    if num1[0] > num2[0] and num1[0] > num3[0] and num1[0] > num4[0]: mayor.append(num1)
+    if num2[0] > num1[0] and num2[0] > num3[0] and num1[0] > num4[0]: mayor.append(num2)
+    if num3[0] > num1[0] and num3[0] > num2[0] and num1[0] > num4[0]: mayor.append(num3)
+    if num4[0] > num1[0] and num4[0] > num2[0] and num4[0] > num3[0]: mayor.append(num4)
+    return mayor
 
 #Funcion imprime resultados
 def imprimir(datos, opcion):
@@ -91,5 +136,4 @@ def imprimir(datos, opcion):
         mejores_por_anio(datos, 'quinto anio')
         mejores_por_anio(datos, 'sexto anio')
     if opcion == 3:
-        mejor_asistencia_anio(datos)
-        
+        mejor_asistencia(datos)
