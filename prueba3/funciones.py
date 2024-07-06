@@ -35,6 +35,18 @@ def obtener_trabajadores_2022(data):
             trabajadores_2022.append(trabajador)
     return trabajadores_2022
 
+def obtener_cargo(datos):
+    cargos = []
+    for i in datos:
+        if i['cargo'] not in cargos and i['cargo'] != 'Cargo':
+            cargos.append(i['cargo'])
+    print(cargos)
+    return cargos
+
+def mejores_pagados_2022(data, anio, cargo):
+    trabajadores_2022 = obtener_trabajadores_2022(data)
+    cargos = obtener_cargo(data)
+
 #Obtenemos los mejores sueldos por cargo en 2022
 """ def mejores_2022(data):
     mejores_pagados = []
@@ -54,8 +66,6 @@ def obtener_trabajadores_2022(data):
         if i['cargo'] == 'Contador':
         if i['cargo'] == 'Desarrollador':
         if i['cargo'] == 'Jefe de Proyectos': """
-
-        
 
 def obtener_rut_usuario(data, rut):
     sueldo = []

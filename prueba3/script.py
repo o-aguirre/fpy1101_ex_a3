@@ -23,6 +23,9 @@ for i in data:
     }
     data_sueldos.append(sueldo_persona)
 
+
+fn.obtener_cargo(data_sueldos)
+
 while True:
     print('1. Mejor pagado')
     print('2. Mejores sueldos 2022 por cargo')
