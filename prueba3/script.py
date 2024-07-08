@@ -33,11 +33,13 @@ while True:
     opt = int(input())
     if opt == 1:
         fn.mejor_pagado(data_sueldos)
-        with open('mejor_pagado.json', 'w') as file:
-            archivo = json.dump(fn.mejor_pagado(data_sueldos), file)
+        #with open('mejor_pagado.json', 'w') as file:
+        #    archivo = json.dump(fn.mejor_pagado(data_sueldos), file)
 
     if opt == 2:
-        print(fn.mejores_2022(data_sueldos))
+        fn.mejores_pagados_2022(fn.obtener_trabajadores_2022(data_sueldos), fn.obtener_cargo(data_sueldos))
+        with open('mejores_pagados_2022.json', 'w', encoding='utf-8') as f:
+            json.dump(fn.mejores_pagados_2022(fn.obtener_trabajadores_2022(data_sueldos), fn.obtener_cargo(data_sueldos)), f)
 
     if opt == 3:
         rut = input('Ingrese rut usuario (formato xxxxxxx-x): ')
